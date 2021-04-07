@@ -1,5 +1,5 @@
 # W10_affinity_control
-### Set the CPU core affinity for WSL2.  This effects all running distro's.
+### Set the CPU core affinity for WSL2.  This effects all running distro's, and is not persistent upon reboot, or restart of WSL.
 
 Why: W10/WSL scheduling high threaded workloads some times favors virtual cores to reduce power consumption at the cost of performance. This script allows for easy dynamic modification of the CPU affinity of the WSL2 virtual machine, to force it to use only one-process per CPU core and/or use only one Ryzen CPU chiplet (for Ryzen 9 processors). 
 
