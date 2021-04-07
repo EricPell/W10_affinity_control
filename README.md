@@ -29,6 +29,6 @@ Please Note: Most systems have scripting disabled. The examples include the comm
         * `powershell WSL_affinity.ps1 -cc:1 -parity:odd`
         * `powershell WSL_affinity.ps1 -cc:1 -p:01`
     * Reset (all cores enabled, all threads):
-        * `powershell WSL_affinity.ps1
+        * `powershell WSL_affinity.ps1`
     * Change the Affinity parity of another **WINDOWS** process:
         * `powershell WSL_affinity.ps1 -p:10 -name python3.exe`
