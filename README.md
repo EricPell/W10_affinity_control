@@ -21,14 +21,14 @@ Please Note: Most systems have scripting disabled. The examples include the comm
 
 * Usage Examples from an Admin Prompt (with different abreviations for parameters):
     * Set Affinity parity to even:
-        * powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -p:even
-        * powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -parity 10
+        * `powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -p:even`
+        * `powershell WSL_affinity.ps1 -parity 10`
     * Enable only Chiplet Core 0:
-        * powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -cc 0
+        * `powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -cc 0`
     * Set Affinity parity on Chiplet Core 1 to odd (disables chiplet core 0):
-        * powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -cc:1 -parity:odd
-        * powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -cc:1 -p:01
+        * `powershell WSL_affinity.ps1 -cc:1 -parity:odd`
+        * `powershell WSL_affinity.ps1 -cc:1 -p:01`
     * Reset (all cores enabled, all threads):
-        * powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1
+        * `powershell WSL_affinity.ps1
     * Change the Affinity parity of another **WINDOWS** process:
-        * powershell -ExecutionPolicy ByPass -File WSL_affinity.ps1 -p:10 -name python3.exe
+        * `powershell WSL_affinity.ps1 -p:10 -name python3.exe`
