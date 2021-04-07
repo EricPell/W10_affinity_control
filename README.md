@@ -1,16 +1,33 @@
 # W10_affinity_control
-Set the CPU core affinity for WSL2.  This effects all running distro's.
-Requires: admin privilege . 
+### Set the CPU core affinity for WSL2.  This effects all running distro's.
 
-Parameters:
-parity: Parity Options (both binary and strings work):  
---  11/all : (default) Select all cores  
---  10/even: Select all even virtual cores (effectively disables Hypert-Threading/SMT)  
---  01/odd : Select all odd virtual cores (effectively disables Hypert-Threading/SMT)  
+Requires: admin privilege.  
+
+Please Note: Most systems have scripting disabled. The examples include the command line option to ByPass this restriction
+
+* Parameters:
+    * parity: Parity Options (both binary and strings work):  
+        * '11' or 'all' : (default) Select all cores  
+        * '10' or 'even': Select all even virtual cores (effectively disables Hypert-Threading/SMT)  
+        * '01' or 'odd' : Select all odd virtual cores (effectively disables Hypert-Threading/SMT)  
     
-cc: Chiplet Core: Select Ryzen Compute (if Ryzen 9).   
--- Affinity parity applies to selected chiplet.  
--- -1: (default)   
--- 0 : cc0  
--- 1 : cc1  
+    * cc: Chiplet Core: Select Ryzen Compute (if Ryzen 9).   
+        * Affinity parity applies to selected chiplet.  
+        * -1: (default)   
+        * 0 : cc0  
+        * 1 : cc1  
   
+
+* Usage Examples (with different abreviations for parameters):
+    * Set Affinity paritiy to even:
+        * powershell -ExecutionPolicy ByPass -File .\WSL_cpu_affinity\WSL_affinity.ps1 -p:even
+        * powershell -ExecutionPolicy ByPass -File .\WSL_cpu_affinity\WSL_affinity.ps1 -parity 10
+    * Enable only Chiplet Core 0:
+        * powershell -ExecutionPolicy ByPass -File .\WSL_cpu_affinity\WSL_affinity.ps1 -cc 0
+    * Set Affinity on Chiplet Core 1 to odd (disables chiplet core 0):
+        * powershell -ExecutionPolicy ByPass -File .\WSL_cpu_affinity\WSL_affinity.ps1 -cc:1 -parity:odd
+        * powershell -ExecutionPolicy ByPass -File .\WSL_cpu_affinity\WSL_affinity.ps1 -cc:1 -p:01
+    * Reset (all cores enabled, all threads):
+        * powershell -ExecutionPolicy ByPass -File .\WSL_cpu_affinity\WSL_affinity.ps1
+    * Change the Affinity of another **WINDOWS** process:
+        * powershell -ExecutionPolicy ByPass -File .\WSL_cpu_affinity\WSL_affinity.ps1 -p:10 -name python3.exe
