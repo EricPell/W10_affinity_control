@@ -8,15 +8,15 @@ Please Note: Most systems have scripting disabled. The examples include the comm
 
 * Parameters:
     * parity: Parity Options (both binary and strings work):  
-        * '11' or 'all' : (default) Select all cores  
-        * '10' or 'even': Select all even virtual cores (effectively disables Hypert-Threading/SMT)  
-        * '01' or 'odd' : Select all odd virtual cores (effectively disables Hypert-Threading/SMT)  
+        * `'11' or 'all' : (default) Select all cores  `
+        * `'10' or 'even': Select all even virtual cores (effectively disables Hypert-Threading/SMT)  `
+        * `'01' or 'odd' : Select all odd virtual cores (effectively disables Hypert-Threading/SMT)  `
     
     * cc: Chiplet Core: Select Ryzen Compute (if Ryzen 9).   
         * Affinity parity applies to selected chiplet.  
-        * -1: (default)   
-        * 0 : cc0  
-        * 1 : cc1  
+        * `-1: (default)  ` 
+        * `0 : cc0  `
+        * `1 : cc1  `
   
 
 * Usage Examples from an Admin Prompt (with different abreviations for parameters):
